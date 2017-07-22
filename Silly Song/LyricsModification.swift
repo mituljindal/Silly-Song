@@ -19,6 +19,9 @@ func shortNameForName(name: String) -> String {
 }
 
 func lyricsForName(lyricsTemplate: String, fullName: String) -> String {
+    if fullName == "" {
+        return ""
+    }
     var lyrics = lyricsTemplate
     let shortName = shortNameForName(name: fullName)
     lyrics = lyrics
