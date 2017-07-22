@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var nameField: UITextField!
     
+    @IBOutlet weak var resetButton: UIButton!
     
     @IBOutlet weak var lyricsView: UITextView!
 
@@ -20,6 +21,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nameField.delegate = self
+        resetButton.isHidden = true
+        resetButton.isEnabled = false
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -28,12 +31,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+
     @IBAction func reset(_ sender: Any) {
         nameField.text = ""
         lyricsView.text = ""
     }
-
+    
     @IBAction func displayLyrics(_ sender: Any) {
+        resetButton.isEnabled = true
+        resetButton.isHidden = false
         let longName = nameField.text
         
         let template = [

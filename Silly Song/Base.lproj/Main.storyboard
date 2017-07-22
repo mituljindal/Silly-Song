@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -58,6 +57,13 @@
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2AQ-N9-woe">
+                                <rect key="frame" x="292" y="269" width="39" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ryA-Mg-iCr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -66,7 +72,9 @@
                             <constraint firstItem="CKQ-rB-mWc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C60-pK-qY0"/>
                             <constraint firstItem="dR8-CV-kNW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C7C-m2-3KW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ivT-Jr-9jL" secondAttribute="bottom" constant="71" id="Hl9-iB-mUR"/>
+                            <constraint firstAttribute="trailing" secondItem="2AQ-N9-woe" secondAttribute="trailing" constant="44" id="PXM-LC-hvn"/>
                             <constraint firstItem="ivT-Jr-9jL" firstAttribute="top" secondItem="dR8-CV-kNW" secondAttribute="bottom" constant="71" id="XIa-A2-0lu"/>
+                            <constraint firstItem="2AQ-N9-woe" firstAttribute="top" secondItem="dR8-CV-kNW" secondAttribute="bottom" constant="8" id="XMw-HI-PRK"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="dR8-CV-kNW" secondAttribute="trailing" id="hx1-vA-mSS"/>
                             <constraint firstItem="dR8-CV-kNW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="27" id="jFT-TA-xUN"/>
                             <constraint firstItem="CKQ-rB-mWc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="lNC-5K-rNa"/>
@@ -75,6 +83,7 @@
                     <connections>
                         <outlet property="lyricsView" destination="ivT-Jr-9jL" id="G1U-bI-ZUU"/>
                         <outlet property="nameField" destination="dR8-CV-kNW" id="ptF-Zm-C7H"/>
+                        <outlet property="resetButton" destination="2AQ-N9-woe" id="EpG-1J-QoG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
