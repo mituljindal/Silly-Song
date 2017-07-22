@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         nameField.delegate = self
         resetButton.isHidden = true
         resetButton.isEnabled = false
+        nameField.addTarget(self, action: #selector(nameFiledChanged(_:)), for: UIControlEvents.editingChanged)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -35,6 +36,8 @@ class ViewController: UIViewController {
     @IBAction func reset(_ sender: Any) {
         nameField.text = ""
         lyricsView.text = ""
+        resetButton.isEnabled = false
+        resetButton.isHidden = true
     }
     
     @IBAction func displayLyrics(_ sender: Any) {
@@ -61,5 +64,12 @@ extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false
+    }
+    
+    @objc func nameFiledChanged(_ nameField: UITextField) {
+        if nameField.text != "" {
+            resetButton.isEnabled = true
+            resetButton.isHidden = false
+        }
     }
 }
